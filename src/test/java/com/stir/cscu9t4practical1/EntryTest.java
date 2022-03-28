@@ -143,6 +143,7 @@ public class EntryTest {
         String expResult = "Alice ran 3.0 km in 0:16:7 on 1/2/2003\n";
         String result = instance.getEntry();
         assertEquals(expResult, result);
+        
     }
     
 }
