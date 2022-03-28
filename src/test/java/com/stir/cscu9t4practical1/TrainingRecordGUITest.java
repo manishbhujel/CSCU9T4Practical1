@@ -93,6 +93,7 @@ public class TrainingRecordGUITest {
         String message = instance.addEntry("generic");
         System.out.println(message);
         assertEquals(message,"Record added\n");
+        
     }
     
     /**
