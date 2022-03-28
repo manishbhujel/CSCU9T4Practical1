@@ -155,7 +155,7 @@ public class CycleEntryTest {
         String expResult = "moderate";
         String result = instance.getTempo();
         assertEquals(expResult, result);
-    }
+    } 
     
     /**
      * Test of getEntry method, of class CycleEntry.
