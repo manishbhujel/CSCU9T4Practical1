@@ -22,14 +22,35 @@ public class TrainingRecord {
    // look up the entry of a given day and month
    public String lookupEntry (int d, int m, int y) {
        ListIterator<Entry> iter = tr.listIterator();
-       String result = "No entries found";
+       String result = "No result found";
+       if (!iter.hasNext()){
+           result = "No result found";
+       }
        while (iter.hasNext()) {
-          Entry current = iter.next();
-          if (current.getDay()==d && current.getMonth()==m && current.getYear()==y) 
-             result = current.getEntry();
-            }
+           Entry current = iter.next();
+           if (current.getDay()==d && current.getMonth()==m && current.getYear()==y) {
+               result = current.getEntry();
+           }
+       }
        return result;
    } // lookupEntry
+   
+   public String findAllByDate (int d, int m, int y) {
+       ListIterator<Entry> iter = tr.listIterator();
+       String result = "";
+       if (!iter.hasNext()){
+           result = "No entries found";
+       }
+       while (iter.hasNext()) {
+           Entry current = iter.next();
+           if (current.getDay()==d && current.getMonth()==m && current.getYear()==y)
+               result = result + current.getEntry();
+           else{
+               result = "No entries found";
+           }
+       }
+       return result;
+   }
    
    // Count the number of entries
    public int getNumberOfEntries(){
